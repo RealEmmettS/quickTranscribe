@@ -17,7 +17,7 @@ function uploadFile() {
   const formElement = document.getElementById('form');
   let rotationAngle = 180;
   const rotationInterval = setInterval(() => {
-    rotationAngle += .1;
+    rotationAngle += .2;
 
     if (rotationAngle == 360) {
       rotationAngle = -359.9;
