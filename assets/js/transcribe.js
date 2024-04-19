@@ -15,10 +15,15 @@ function uploadFile() {
 
   // Start rotating the background
   const formElement = document.getElementById('form');
-  let rotationAngle = 0;
+  let rotationAngle = 180;
   const rotationInterval = setInterval(() => {
-    rotationAngle += 0.1;
-    formElement.style.background = `linear-gradient(${rotationAngle}deg, #f1f3f7 0%, #d7dce7)`;
+    rotationAngle += .1;
+
+    if (rotationAngle == 360) {
+      rotationAngle = -359.9;
+    }
+    
+    formElement.style.background = `linear-gradient(${rotationAngle}deg, #f1f3f7 0%, rgb(229,233,241) 53%, #d2e0f4 83%, #c7d1e0 99%), #f1f3f7`;
   }, 10);
 
   fetch('https://aitranscribe.replit.app/transcribe', {
