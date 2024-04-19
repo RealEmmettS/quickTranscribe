@@ -13,12 +13,22 @@ function uploadFile() {
   const formData = new FormData();
   formData.append('file', file);
 
+  // Start rotating the background
+  const formElement = document.getElementById('form');
+  let rotationAngle = 0;
+  const rotationInterval = setInterval(() => {
+    rotationAngle += 0.1;
+    formElement.style.background = `linear-gradient(${rotationAngle}deg, #f1f3f7 0%, #d7dce7)`;
+  }, 10);
+
   fetch('https://aitranscribe.replit.app/transcribe', {
     method: 'POST',
     body: formData
   })
     .then(response => response.blob())
     .then(blob => {
+      clearInterval(rotationInterval); // Stop rotating the background
+
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
@@ -29,8 +39,11 @@ function uploadFile() {
 
       // Clear the form
       fileInput.value = '';
+      formElement.style.background = 'linear-gradient(#f1f3f7 0%, #d7dce7)';
     })
     .catch(error => {
+      clearInterval(rotationInterval); // Stop rotating the background
+
       console.error('Error:', error);
       alert('An error occurred while processing the file');
     });
