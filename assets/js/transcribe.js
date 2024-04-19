@@ -26,6 +26,9 @@ function uploadFile() {
       document.body.appendChild(a);
       a.click();
       a.remove();
+
+      // Clear the form
+      fileInput.value = '';
     })
     .catch(error => {
       console.error('Error:', error);
