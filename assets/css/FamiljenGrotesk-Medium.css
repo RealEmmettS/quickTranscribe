@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'FamiljenGrotesk-Medium';
+	src: url(/assets/fonts/FamiljenGrotesk-Medium-c28e57d6cf05e4bf306b0e1b090d16ac.woff2) format('woff2'),
+	url(/assets/fonts/FamiljenGrotesk-Medium-8559f1888156b88079f06c6ebfb2f8fb.woff) format('woff'),
+	url(/assets/fonts/FamiljenGrotesk-Medium-1f4b153bfb450fd2dcf9f3b533127128.ttf) format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
