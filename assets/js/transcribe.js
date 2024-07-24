@@ -26,7 +26,7 @@ function uploadFile() {
     formElement.style.background = `linear-gradient(${rotationAngle}deg, #f1f3f7 0%, rgb(229,233,241) 53%, #d2e0f4 83%, #c7d1e0 99%), #f1f3f7`;
   }, 5);
 
-  fetch('https://aitranscribe.replit.app/transcribe', {
+  fetch('https://quicktranscribe-backend.onrender.com/transcribe', {
     method: 'POST',
     body: formData
   })
