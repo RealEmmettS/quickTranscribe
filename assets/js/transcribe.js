@@ -1,4 +1,10 @@
 // transcribe.js
+
+// When the website initially loads, stop the loading animation
+window.onload = function() {
+  stopLoading();
+}
+
 document.getElementById('submit').addEventListener('click', uploadFile);
 
 function uploadFile() {
@@ -53,5 +59,5 @@ function startLoading() {
 
 function stopLoading() {
   const loader = document.getElementById('loader');
-  loader.style.display = 'flex';
+  loader.style.display = 'none';
 }
