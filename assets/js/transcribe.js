@@ -65,6 +65,6 @@ function uploadFile() {
     })
     .catch(error => {
       console.error('Error:', error);
-      alert('An error occurred while processing the file');
+      alert('An error occurred while processing the file: ' + error);
     });
 }
