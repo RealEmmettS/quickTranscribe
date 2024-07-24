@@ -61,7 +61,6 @@ function uploadFile() {
 
       // Clear the form
       fileInput.value = '';
-      formElement.style.background = 'linear-gradient(#f1f3f7 0%, #d7dce7)';
     })
     .catch(error => {
       console.error('Error:', error);
