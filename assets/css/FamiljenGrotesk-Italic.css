@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'FamiljenGrotesk-Italic';
+	src: url(/assets/fonts/FamiljenGrotesk-Italic-82a294800e726dd15816e0a895f3f9ef.woff2) format('woff2'),
+	url(/assets/fonts/FamiljenGrotesk-Italic-f7cefdd8e56bdb189e61d7f7fbc41817.woff) format('woff'),
+	url(/assets/fonts/FamiljenGrotesk-Italic-ad627c427e3c209fb2226bb20eafe676.ttf) format('truetype');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
