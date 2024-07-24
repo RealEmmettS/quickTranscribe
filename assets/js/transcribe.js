@@ -13,18 +13,7 @@ function uploadFile() {
   const formData = new FormData();
   formData.append('file', file);
 
-  // Start rotating the background
-  const formElement = document.getElementById('form');
-  let rotationAngle = 180;
-  const rotationInterval = setInterval(() => {
-    rotationAngle += .2;
-
-    if (rotationAngle == 360) {
-      rotationAngle = -359.9;
-    }
-    
-    formElement.style.background = `linear-gradient(${rotationAngle}deg, #f1f3f7 0%, rgb(229,233,241) 53%, #d2e0f4 83%, #c7d1e0 99%), #f1f3f7`;
-  }, 5);
+  startLoading(); // Start the loading animation
 
   fetch('https://quicktranscribe-backend.onrender.com/transcribe', {
     method: 'POST',
@@ -32,7 +21,8 @@ function uploadFile() {
   })
     .then(response => response.blob())
     .then(blob => {
-      clearInterval(rotationInterval); // Stop rotating the background
+      
+      stopLoading(); // Stop the loading animation
 
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -52,4 +42,16 @@ function uploadFile() {
       console.error('Error:', error);
       alert('An error occurred while processing the file');
     });
+}
+
+
+function startLoading() {
+  /* HTML: <div class="loader"></div> */
+  const loader = document.getElementById('loader');
+  loader.style.display = 'flex';
+}
+
+function stopLoading() {
+  const loader = document.getElementById('loader');
+  loader.style.display = 'flex';
 }
