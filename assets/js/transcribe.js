@@ -3,6 +3,9 @@
 // When the website initially loads, stop the loading animation
 window.onload = function() {
   const loader = document.getElementById('loader');
+  
+  //remove d-flex class (if it exists)
+  loader.classList.remove('d-flex');
   //add d-none class
   loader.classList.add('d-none');
 }
