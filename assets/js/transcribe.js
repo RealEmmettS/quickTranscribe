@@ -2,8 +2,21 @@
 
 // When the website initially loads, stop the loading animation
 window.onload = function() {
-  stopLoading();
+  const loader = document.getElementById('loader');
+  loader.style.display = 'none';
 }
+
+function startLoading() {
+  const loader = document.getElementById('loader');
+  loader.style.display = 'flex';
+}
+
+function stopLoading() {
+  const loader = document.getElementById('loader');
+  loader.style.display = 'none';
+}
+
+//////////////
 
 document.getElementById('submit').addEventListener('click', uploadFile);
 
@@ -43,21 +56,7 @@ function uploadFile() {
       formElement.style.background = 'linear-gradient(#f1f3f7 0%, #d7dce7)';
     })
     .catch(error => {
-      clearInterval(rotationInterval); // Stop rotating the background
-
       console.error('Error:', error);
       alert('An error occurred while processing the file');
     });
-}
-
-
-function startLoading() {
-  /* HTML: <div class="loader"></div> */
-  const loader = document.getElementById('loader');
-  loader.style.display = 'flex';
-}
-
-function stopLoading() {
-  const loader = document.getElementById('loader');
-  loader.style.display = 'none';
 }
