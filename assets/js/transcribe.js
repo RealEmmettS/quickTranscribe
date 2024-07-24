@@ -3,17 +3,22 @@
 // When the website initially loads, stop the loading animation
 window.onload = function() {
   const loader = document.getElementById('loader');
-  loader.style.display = 'none';
+  //add d-none class
+  loader.classList.add('d-none');
 }
 
 function startLoading() {
   const loader = document.getElementById('loader');
-  loader.style.display = 'flex';
+
+  loader.classList.remove('d-none');
+  loader.classList.add('d-flex');
 }
 
 function stopLoading() {
   const loader = document.getElementById('loader');
-  loader.style.display = 'none';
+
+  loader.classList.remove('d-flex');
+  loader.classList.add('d-none');
 }
 
 //////////////
